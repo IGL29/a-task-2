@@ -1,0 +1,20 @@
+<div>
+  <h2>{{ title }}</h2>
+
+  <app-description-wrapper [title]="'Card'">
+    <app-card></app-card>
+  </app-description-wrapper>
+
+  <app-description-wrapper [title]="'Tooltip'">
+    <app-icon-tooltip></app-icon-tooltip>
+  </app-description-wrapper>
+
+  <app-description-wrapper [title]="'Dropdown'">
+    <app-dropdown></app-dropdown>
+  </app-description-wrapper>
+  
+  <app-description-wrapper [title]="'Reused in the app'">
+    <app-button></app-button>
+    <app-rating></app-rating>
+  </app-description-wrapper>
+</div>
