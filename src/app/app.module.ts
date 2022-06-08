@@ -19,7 +19,7 @@ import { DescriptionWrapperModule } from './description-wrapper/desription-wrapp
     RatingModule,
     IconTooltipModule,
     DropdownModule,
-    DescriptionWrapperModule
+    DescriptionWrapperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

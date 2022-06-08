@@ -1,0 +1,7 @@
+<div class="price">
+  <div class="price__wrap-discount" [ngClass]="{ 'price__wrap-discount--hidden': !discount }">
+    <p class="price__old-price">{{ price?.value }}</p>
+    <app-badge class="price__discount" [bage]="discount"></app-badge>
+  </div>
+  <p class="price__current-price">{{ newPrice }}₽</p>
+</div>

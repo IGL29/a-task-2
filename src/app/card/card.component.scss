@@ -1,0 +1,24 @@
+.card {
+  display: inline-block;
+  max-width: 300px;
+  padding: 36px 24px;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+
+  &__rating {
+    margin-right: 10px;
+  }
+
+  &__rates {
+    display: flex;
+    align-items: center;
+  }
+}
+.img-wrapper__img {
+  width: 100%;
+}
+.card ::ng-deep .card__btn > button {
+  width: 100%;
+  background-color: green;
+}

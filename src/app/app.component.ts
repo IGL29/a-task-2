@@ -1,3 +1,5 @@
+import { IProduct } from './types/card';
+import { product } from './data/product.data';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AppComponent';
+  product: IProduct = product
 }

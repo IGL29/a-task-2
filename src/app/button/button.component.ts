@@ -1,20 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: '<button>{{ text }}</button>',
-  styles: [`
-    button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      background-color: #0099FF;
-      font-size: 16px;
-      color: #FFF;
-      cursor: pointer 
-    }
-  `]
+  template: `<button class="button" [ngClass]="{ 'button--disabled': isDisabled }">{{ text }}</button>`,
+  styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
   @Input() text = 'Button'
+  @Input() isDisabled = false
 }
