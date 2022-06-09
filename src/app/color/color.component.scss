@@ -1,0 +1,21 @@
+.color-btn {
+  position: relative;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.color-btn--active::before {
+  content: '';
+  position: absolute;
+  top: 65%;
+  left: 65%;
+  width: 130%;
+  height: 130%;
+  transform: translate(-61%, -61%);
+  border: 1px solid black;
+  pointer-events: none;
+  border-radius: 50%;
+}

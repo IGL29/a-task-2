@@ -4,6 +4,7 @@
   &__wrap-discount {
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
 
     &--hidden {
       display: none;
@@ -16,7 +17,8 @@
   }
 
   &__current-price {
-    font-size: 20px;
+    margin-top: 0;
+    font-size: 25px;
     font-weight: 600;
   }
 }

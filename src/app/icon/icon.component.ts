@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-icon',
   template: `
     <div>
-      <span class="material-icons">face</span>
+      <span class="material-icons icon">{{ icon }}</span>
     </div>
   `,
   styles: ['']
 })
-export class IconComponent { }
+export class IconComponent {
+  @Input() icon = 'add'
+}

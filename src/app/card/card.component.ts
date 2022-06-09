@@ -7,8 +7,8 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
     <div class="card">
       <div class="card__inner">
         <div class="card__img-wrapper img-wrapper">
-          <app-badge [bage]="product?.bage?.value"></app-badge>
-          <img class="img-wrapper__img" [src]="product?.image" />
+          <app-badge class="img-wrapper__bage" [bage]="product?.bage?.value"></app-badge>
+          <img class="img-wrapper__img" [src]="currentImage" />
         </div>
 
         <p class="card__company">{{ product?.company }}</p>
@@ -21,11 +21,17 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 
         <app-price class="card__price" [price]="product?.price"></app-price>
 
-        <app-color [color]="product?.colors?.[0]?.color || ''"></app-color>
+        <div class="colors">
+          <app-color class="colors__color" [isActive]="isColorActive(1)" [color]="product?.colors?.[1]?.color || ''" (click)="activeColorIndex=1"></app-color>
+          <app-color class="colors__color" [isActive]="isColorActive(0)" [color]="product?.colors?.[0]?.color || ''" (click)="activeColorIndex=0"></app-color>
+        </div>
 
         <div class="card__actions">
-          <app-icon></app-icon>
-          <app-button class="card__btn" [text]="'buy'" [isDisabled]="isAdded" (click)="toggleButton()"></app-button>
+          <app-button class="card__btn add-to-cart" [text]="'Добавить в корзину'"></app-button>
+
+          <app-button class="card__btn favorites" [isDisabled]="isFavourites" (click)="toggleButton()">
+            <app-icon [icon]="'favorite'"></app-icon>
+          </app-button>
         </div>
       </div>
     </div>
@@ -34,11 +40,29 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class CardComponent {
   @Input() product?: IProduct
-  isAdded = false;
+  @Input() activeColorIndex = 0
 
-  constructor() {}
+  isFavourites = false;
+
+  constructor() { }
+
+  set colorIndex(index) {
+    this.activeColorIndex = index
+  }
+
+  get colorIndex() {
+    return this.activeColorIndex;
+  }
+
+  isColorActive(index: number) {
+    return this.activeColorIndex === index;
+  }
+
+  get currentImage() {
+    return this.product?.colors?.[this.activeColorIndex]?.image || this.product?.image;
+  }
 
   toggleButton() {
-    this.isAdded = !this.isAdded;
+    this.isFavourites = !this.isFavourites;
   }
 }

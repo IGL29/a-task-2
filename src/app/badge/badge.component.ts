@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
       {{ bage }}
     </p>
   `,
-  styles: ['.bage { display: inline-block; padding: 5px; color: #FFF }']
+  styles: ['.bage { display: inline-block; margin: 0; padding: 5px; color: #FFF }']
 })
 export class BadgeComponent {
   @Input() bage: string | number | undefined

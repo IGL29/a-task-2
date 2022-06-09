@@ -5,6 +5,15 @@
   border: 1px solid #DDDDDD;
   border-radius: 8px;
   background-color: #FFFFFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  &__company {
+    margin-top: 0;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
 
   &__rating {
     margin-right: 10px;
@@ -13,12 +22,56 @@
   &__rates {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  ::ng-deep .card__btn > button {
+    width: 100%;
+    color: #555555;
+    background-color: transparent;
+    border: 1px solid #DDDDDD;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    &:active {
+      background-color: #cacaca;
+    }
+  }
+
+  ::ng-deep .card__btn.favorites > button {
+    padding: 7px;
+  }
+  ::ng-deep .card__btn > button.button--disabled .icon {
+    opacity: 0.5;
   }
 }
-.img-wrapper__img {
-  width: 100%;
+.img-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__bage {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
-.card ::ng-deep .card__btn > button {
+
+.colors__color:not(:last-of-type) {
+  margin-right: 7px;
+}
+
+.add-to-cart {
   width: 100%;
-  background-color: green;
+  margin-right: 20px;
 }
